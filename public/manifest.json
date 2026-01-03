@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Lichess Arrow Tool",
+  "version": "1.0.0",
+  "description": "Рисуйте стрелки на досках lichess.org для анализа партий",
+  "permissions": [
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "favicon.svg",
+      "48": "favicon.svg",
+      "128": "favicon.svg"
+    }
+  },
+  "icons": {
+    "16": "favicon.svg",
+    "48": "favicon.svg",
+    "128": "favicon.svg"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://lichess.org/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_end"
+    }
+  ]
+}
